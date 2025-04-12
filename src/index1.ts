@@ -5,7 +5,7 @@ interface User{
     email: string;
     password: string;
 }
-type UpdateProps = Pick<User,'name' | 'age'| 'email'>
+type UpdateProps = Pick<User,'name' &'age'& 'email'>
 function updateUser(updatedProps:UpdateProps){
     console.log(updatedProps);
 
@@ -13,5 +13,6 @@ function updateUser(updatedProps:UpdateProps){
 updateUser({
     name: 'Taro',
     age: 20,
-    email:"nsjcbhbsh"
-})
+    
+}) 
+//when place union(|) in the place of intersection (&) it will give error
